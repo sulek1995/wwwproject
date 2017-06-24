@@ -8,7 +8,6 @@ class Main extends React.Component{
     render(){
         return (
             <div>
-
                 <div  className="bgimg-1"/>
 
                 <div id="portfolio" className="div1">
