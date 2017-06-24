@@ -24,10 +24,6 @@ class Main extends React.Component{
                 </div>
 
                 <div className="bgimg-1"/>
-                <div id="about" className="div1">
-                    <h3 className="h3paral">O nas</h3>
-                    <p> Stworzone przez Adam Piekarczyk & Tomasz Sułecki</p>
-                </div>
 
             </div>
 
