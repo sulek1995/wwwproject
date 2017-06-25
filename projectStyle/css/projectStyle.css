@@ -133,10 +133,10 @@ div.panel {
 }
 
 .galleryPicture {
-    width: calc(100% - 20px);
+    width: 80%;
     margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .galleryDiv {

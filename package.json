@@ -28,6 +28,7 @@
     "node-rsa": "^0.4.2",
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
+    "react-infinite-scroller": "^1.0.12",
     "react-password-field": "0.0.2",
     "react-scroll-pagination": "^0.1.9"
   }

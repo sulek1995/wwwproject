@@ -8,7 +8,6 @@ class PictureComponent extends React.Component{
         return(
             <div className="galleryDiv">
                 <img className="galleryPicture" src={this.props.src}/>
-
             </div>
         )
     }
