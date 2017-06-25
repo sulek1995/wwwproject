@@ -1,6 +1,6 @@
 import React from 'react'
 import QuestionsComponent from '../src/QuestionsComponent'
-
+import PictureComponent from '../src/PictureComponent'
 
 class Main extends React.Component {
     constructor() {
@@ -17,13 +17,13 @@ class Main extends React.Component {
                     <p></p>
                 </div>
 
-                <div className="bgimg-3"/>
+                <div className="bgimg-2"/>
 
                 <div id="faq" style={{position: 'relative'}}>
                     <QuestionsComponent id="faq"/>
                 </div>
 
-                <div className="bgimg-1"/>
+                <div className="bgimg-3"/>
 
             </div>
 

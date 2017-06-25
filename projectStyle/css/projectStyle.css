@@ -124,11 +124,21 @@ h3 {
     margin-left: 5px;
 }
 
-
 div.panel {
     padding: 0 18px;
     background-color: white;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+}
+
+.galleryPicture {
+    width: calc(100% - 20px);
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.galleryDiv {
+    background-color: #1a242f;
 }

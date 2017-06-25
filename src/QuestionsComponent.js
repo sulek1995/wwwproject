@@ -1,10 +1,11 @@
 import React from 'react'
 import Question from '../src/Question'
 
-class QuestionsComponent extends React.Component{
-    constructor(){
+class QuestionsComponent extends React.Component {
+    constructor() {
         super();
     }
+
     render() {
         return (
             <div>
