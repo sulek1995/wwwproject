@@ -1,26 +1,26 @@
 import React from 'react'
+import QuestionsComponent from '../src/QuestionsComponent'
 
 
-class Main extends React.Component{
-    constructor(){
+class Main extends React.Component {
+    constructor() {
         super();
     }
-    render(){
+
+    render() {
         return (
             <div>
-                <div  className="bgimg-1"/>
+                <div className="bgimg-1"/>
 
                 <div id="portfolio" className="div1">
                     <h3 className="h3paral">Parallax Demo</h3>
-                    <p> </p>
+                    <p></p>
                 </div>
 
                 <div className="bgimg-3"/>
 
-                <div style={{position:'relative'}}>
-                    <div className="div3">
-                        <p>Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
-                    </div>
+                <div id="faq" style={{position: 'relative'}}>
+                    <QuestionsComponent id="faq"/>
                 </div>
 
                 <div className="bgimg-1"/>
