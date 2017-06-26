@@ -1,8 +1,10 @@
 import React from 'react'
 import PictureComponent from '../src/PictureComponent'
+import GalleryNavbar from '../src/GalleryNavbar'
 import InfiniteScroll from '../node_modules/react-infinite-scroller/dist/InfiniteScroll'
 import * as axios from "axios";
 import qwest from 'qwest'
+import MainNavbar from "./MainNavbar";
 
 const imageList = [];
 const api = {
@@ -24,7 +26,7 @@ class Main extends React.Component {
         var self = this;
 
         var url = api.baseUrl + '/users/8665091/favorites';
-        if(this.state.nextHref) {
+        if (this.state.nextHref) {
             url = this.state.nextHref;
         }
 
@@ -35,18 +37,18 @@ class Main extends React.Component {
         }, {
             cache: true
         })
-            .then(function(xhr, resp) {
+            .then(function (xhr, resp) {
                 console.log(resp);
-                if(resp) {
+                if (resp) {
                     var tracks = self.state.tracks;
                     resp.collection.map((track) => {
-                        if(track.artwork_url === null) {
+                        if (track.artwork_url === null) {
                             track.artwork_url = track.user.avatar_url;
                         }
                         tracks.push(track);
                     });
 
-                    if(resp.next_href) {
+                    if (resp.next_href) {
                         self.setState({
                             tracks: tracks,
                             nextHref: resp.next_href
@@ -66,24 +68,26 @@ class Main extends React.Component {
         var items = [];
         this.state.tracks.map((track, i) => {
             items.push(
-                <PictureComponent src={track.artwork_url}/>
+                <PictureComponent src={track.artwork_url} title={track.title}/>
             );
         });
-
         return (
-            <InfiniteScroll
-                pageStart={0}
-                loadMore={this.loadItems.bind(this)}
-                hasMore={this.state.hasMoreItems}
-                loader={loader}>
+            <div>
+                <GalleryNavbar/>
+                <InfiniteScroll
+                    pageStart={0}
+                    loadMore={this.loadItems.bind(this)}
+                    hasMore={this.state.hasMoreItems}
+                    loader={loader}>
 
-                <div className="tracks">
-                    {items}
-                </div>
-            </InfiniteScroll>
-        );
+                    <div className="tracks">
+                        {items}
+                    </div>
+                </InfiniteScroll>
+            </div>
+
+        )
     }
-
 }
 
 export default Main

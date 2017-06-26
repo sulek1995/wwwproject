@@ -2,7 +2,6 @@ body, html {
     height: 100%;
     margin: 0;
     font: 400 15px/1.8 "Lato", sans-serif;
-    color: #777;
 }
 
 .bgimg-1, .bgimg-2, .bgimg-3 {
@@ -41,7 +40,7 @@ body, html {
 
 .caption span.border {
     background-color: #111;
-    color: #fff;
+    color: #2C3E50;
     padding: 18px;
     font-size: 25px;
     letter-spacing: 10px;
@@ -63,7 +62,7 @@ h3 {
 
 .div1 {
     color: #777;
-    background-color: white;
+    background-color: #2C3E50;
     text-align: center;
     padding: 50px 80px;
     text-align: justify;
@@ -74,7 +73,7 @@ h3 {
 }
 
 .div2 {
-    color: #ddd;
+    color: #2C3E50;
     background-color: #282E34;
     text-align: center;
     padding: 50px 80px;
@@ -82,7 +81,7 @@ h3 {
 }
 
 .div3 {
-    color: #ddd;
+    color: #2C3E50;
     background-color: #282E34;
     text-align: center;
     padding: 50px 80px;
@@ -92,7 +91,7 @@ h3 {
 .border {
     background-color: transparent;
     font-size: 25px;
-    color: #f7f7f7;
+    color: #2C3E50;
 }
 
 .accordion {
@@ -113,7 +112,7 @@ h3 {
 
 .panel {
     padding: 0 18px;
-    background-color: white;
+    background-color: #2C3E50;
     display: none;
 }
 
@@ -126,19 +125,40 @@ h3 {
 
 div.panel {
     padding: 0 18px;
-    background-color: white;
+    background-color: #2C3E50;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 }
 
+
 .galleryPicture {
-    width: 80%;
-    margin-top: 10px;
-    margin-left: 10%;
-    margin-right: 10%;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 30%;
 }
 
 .galleryDiv {
     background-color: #1a242f;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.picTitle {
+    background-color: #2C3E50;
+}
+
+.body {
+    background-color: #2C3E50;
+}
+
+.myH1 {
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #325577;
+}
+.whole {
+    background-color: #325577;
 }

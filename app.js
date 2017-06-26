@@ -6,8 +6,8 @@ import {Router, Route, IndexRoute, browserHistory} from "react-router";
 
 
 ReactDOM.render(
-  <Router history = {browserHistory}>
-      <Route path = '/' component={Main}/>
-      <Route path = '/gallery' component={Gallery}/>
-  </Router>, document.getElementById('app')
+    <Router history={browserHistory}>
+        <Route path='/' component={Main}/>
+        <Route path='/gallery' component={Gallery}/>
+    </Router>, document.getElementById('app')
 );

@@ -1,6 +1,7 @@
 import React from 'react'
 import QuestionsComponent from '../src/QuestionsComponent'
-import PictureComponent from '../src/PictureComponent'
+import MainNavbar from '../src/MainNavbar'
+
 
 class Main extends React.Component {
     constructor() {
@@ -10,6 +11,7 @@ class Main extends React.Component {
     render() {
         return (
             <div>
+                <MainNavbar/>
                 <div className="bgimg-1"/>
 
                 <div id="portfolio" className="div1">
