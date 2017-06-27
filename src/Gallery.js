@@ -2,15 +2,8 @@ import React from 'react'
 import PictureComponent from '../src/PictureComponent'
 import GalleryNavbar from '../src/GalleryNavbar'
 import InfiniteScroll from '../node_modules/react-infinite-scroller/dist/InfiniteScroll'
-import * as axios from "axios";
 import qwest from 'qwest'
-import MainNavbar from "./MainNavbar";
 
-const imageList = [];
-const api = {
-    baseUrl: 'https://api.soundcloud.com',
-    client_id: 'caf73ef1e709f839664ab82bef40fa96'
-};
 
 class Main extends React.Component {
     constructor() {
@@ -23,35 +16,28 @@ class Main extends React.Component {
     }
 
     loadItems(page) {
-        var self = this;
+        let self = this;
 
-        var url = api.baseUrl + '/users/8665091/favorites';
+        let url = "http://localhost:8000/api/images/";
         if (this.state.nextHref) {
             url = this.state.nextHref;
         }
 
-        qwest.get(url, {
-            client_id: api.client_id,
-            linked_partitioning: 1,
-            page_size: 10
-        }, {
+        qwest.get(url, null, {
             cache: true
         })
             .then(function (xhr, resp) {
                 console.log(resp);
                 if (resp) {
-                    var tracks = self.state.tracks;
-                    resp.collection.map((track) => {
-                        if (track.artwork_url === null) {
-                            track.artwork_url = track.user.avatar_url;
-                        }
+                    let tracks = self.state.tracks;
+                    resp.results.map((track) => {
                         tracks.push(track);
                     });
 
-                    if (resp.next_href) {
+                    if (resp.next) {
                         self.setState({
                             tracks: tracks,
-                            nextHref: resp.next_href
+                            nextHref: resp.next
                         });
                     } else {
                         self.setState({
@@ -65,15 +51,16 @@ class Main extends React.Component {
     render() {
         const loader = <div className="loader">Loading ...</div>;
 
-        var items = [];
+        let items = [];
         this.state.tracks.map((track, i) => {
             items.push(
-                <PictureComponent src={track.artwork_url} title={track.title}/>
+                <PictureComponent src={track.image} title={track.title} id={track.url}/>
             );
         });
         return (
             <div>
                 <GalleryNavbar/>
+                <div className="free"/>
                 <InfiniteScroll
                     pageStart={0}
                     loadMore={this.loadItems.bind(this)}
